@@ -67,7 +67,7 @@ jobs:
       run: |
         cd src
         xvfb-run --auto-servernum pytest --cov-report= --cov=rdplot
-    - name: After Success
-      run: |
-        coveralls
-        cd ..
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
